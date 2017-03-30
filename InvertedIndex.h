@@ -30,7 +30,6 @@ struct SInvDoc
 	SInvDoc(TID ID, int32_t nSize, std::vector<TKeyWord> &vecWord);
 };
 
-
 template<class TKeyWord, class TID>
 class InvertedIndex
 {
