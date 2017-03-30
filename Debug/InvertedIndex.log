@@ -1,7 +1,32 @@
-﻿  InvertedIndex.cpp
+﻿  sample.cpp
+d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\invertedindex.cpp(222): warning C4018: “<”: 有符号/无符号不匹配
+  d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\invertedindex.cpp(216): note: 编译类 模板 成员函数“float InvertedIndex<uint32_t,int32_t>::matchByHammingDistance(TID,SInvDoc<uint32_t,TID> &)”时
+          with
+          [
+              TID=int32_t
+          ]
+  d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\invertedindex.cpp(197): note: 参见对正在编译的函数 模板 实例化“float InvertedIndex<uint32_t,int32_t>::matchByHammingDistance(TID,SInvDoc<uint32_t,TID> &)”的引用
+          with
+          [
+              TID=int32_t
+          ]
+  d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\invertedindex.cpp(129): note: 编译类 模板 成员函数“std::vector<TID,std::allocator<_Ty>> InvertedIndex<uint32_t,TID>::getTopN(SInvDoc<uint32_t,TID> &,int)”时
+          with
+          [
+              TID=int32_t,
+              _Ty=int32_t
+          ]
+  d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\invertedindex.cpp(108): note: 参见对正在编译的函数 模板 实例化“std::vector<TID,std::allocator<_Ty>> InvertedIndex<uint32_t,TID>::getTopN(SInvDoc<uint32_t,TID> &,int)”的引用
+          with
+          [
+              TID=int32_t,
+              _Ty=int32_t
+          ]
+  d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\invertedindex.cpp(30): note: 编译类 模板 成员函数“bool InvertedIndex<uint32_t,int32_t>::addDoc(SInvDoc<uint32_t,int32_t> &)”时
+  d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\sample.cpp(20): note: 参见对正在编译的函数 模板 实例化“bool InvertedIndex<uint32_t,int32_t>::addDoc(SInvDoc<uint32_t,int32_t> &)”的引用
+  d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\sample.cpp(18): note: 参见对正在编译的类 模板 实例化“InvertedIndex<uint32_t,int32_t>”的引用
+d:\用户目录\我的文档\visual studio 2015\projects\invertedindex\invertedindex\invertedindex.cpp(230): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+  InvertedIndex.cpp
   正在生成代码...
-  正在编译...
-  sample.cpp
-  正在生成代码...
-  InvertedIndex.vcxproj -> d:\用户目录\我的文档\visual studio 2015\Projects\InvertedIndex\Debug\InvertedIndex.exe
-  InvertedIndex.vcxproj -> d:\用户目录\我的文档\visual studio 2015\Projects\InvertedIndex\Debug\InvertedIndex.pdb (Partial PDB)
+  InvertedIndex.vcxproj -> D:\用户目录\我的文档\Visual Studio 2015\Projects\InvertedIndex\Debug\InvertedIndex.exe
+  InvertedIndex.vcxproj -> D:\用户目录\我的文档\Visual Studio 2015\Projects\InvertedIndex\Debug\InvertedIndex.pdb (Partial PDB)
