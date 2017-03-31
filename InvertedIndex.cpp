@@ -1,6 +1,8 @@
 #include "InvertedIndex.h"
 
 
+#ifndef __INVERTED_CPP__
+#define __INVERTED_CPP__
 
 template<class TKeyWord, class TID>
 SInvDoc<TKeyWord, TID>::SInvDoc(TID ID, int32_t nSize, std::vector<TKeyWord> &vecWord)
@@ -245,3 +247,8 @@ float InvertedIndex<TKeyWord, TID>::getThrehold(MatchType method)
 
 	return 0;
 }
+
+
+
+
+#endif

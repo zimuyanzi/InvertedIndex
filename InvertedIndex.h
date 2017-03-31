@@ -1,5 +1,5 @@
 ﻿/*
-* FUNCTION   : inverted index
+* FUNCTION   : Inverted Index
 * AUTHOR     : zimuyanzi
 * DATE       : 2017-03-30
 *
