@@ -28,7 +28,7 @@ bool operator<(const SIDCount<TID> &a, const SIDCount<TID> &b)
 }
 
 template<class TKeyWord, class TID>
-bool InvertedIndex<TKeyWord, TID>::addDoc(SInvDoc<TKeyWord, TID> &Doc)
+bool InvertedIndex<TKeyWord, TID>::addDoc(IN SInvDoc<TKeyWord, TID> &Doc)
 {
 	//! add doc to doc map
 	auto newDoc = m_mapDoc.find(Doc.nID);
@@ -51,7 +51,7 @@ bool InvertedIndex<TKeyWord, TID>::addDoc(SInvDoc<TKeyWord, TID> &Doc)
 }
 
 template<class TKeyWord, class TID>
-bool InvertedIndex<TKeyWord, TID>::delDoc(TID nID)
+bool InvertedIndex<TKeyWord, TID>::delDoc(IN TID nID)
 {
 	auto newDoc = m_mapDoc.find(nID);
 	if (newDoc == m_mapDoc.end())
@@ -93,7 +93,7 @@ bool InvertedIndex<TKeyWord, TID>::delDoc(TID nID)
 }
 
 template<class TKeyWord, class TID>
-bool InvertedIndex<TKeyWord, TID>::updateDoc(SInvDoc<TKeyWord, TID> &Doc)
+bool InvertedIndex<TKeyWord, TID>::updateDoc(IN SInvDoc<TKeyWord, TID> &Doc)
 {
 	if (delDoc(Doc.nID) == false)
 		return false;
@@ -127,7 +127,7 @@ bool InvertedIndex<TKeyWord, TID>::getMatchID(IN SInvDoc<TKeyWord, TID> &Doc, IN
 }
 
 template<class TKeyWord, class TID>
-std::vector<TID> InvertedIndex<TKeyWord, TID>::getTopN(SInvDoc<TKeyWord, TID> &Doc, int nTopN)
+std::vector<TID> InvertedIndex<TKeyWord, TID>::getTopN(IN SInvDoc<TKeyWord, TID> &Doc, IN int nTopN)
 {
 	std::vector<TID> vectResult;
 	std::map<TID, int> mapIDCount;
@@ -221,7 +221,7 @@ float InvertedIndex<TKeyWord, TID>::matchByHammingDistance(IN TID nID, IN SInvDo
 		return 0;
 
 	int nLength = 0, nEqual = 0;
-	for (; nLength < Doc.nVecWord.size() && nLength < itDoc->second.nVecWord.size(); nLength++)
+	for (; nLength < (int32_t)Doc.nVecWord.size() && nLength < (int32_t)itDoc->second.nVecWord.size(); nLength++)
 	{
 		if (Doc.nVecWord[nLength] == itDoc->second.nVecWord[nLength])
 		{
@@ -229,11 +229,11 @@ float InvertedIndex<TKeyWord, TID>::matchByHammingDistance(IN TID nID, IN SInvDo
 		}
 	}
 
-	return nEqual * 1.0/ nLength;
+	return nEqual * 1.0f/ nLength;
 }
 
 template<class TKeyWord, class TID>
-float InvertedIndex<TKeyWord, TID>::getThrehold(MatchType method)
+float InvertedIndex<TKeyWord, TID>::getThrehold(IN MatchType method)
 {
 	switch (method)
 	{

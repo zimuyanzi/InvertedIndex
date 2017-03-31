@@ -16,8 +16,8 @@
 #define IN
 #define OUT
 
-#define THREASHOLD_EDIT_DISTANCE 0.3f
-#define THREASHOLD_HAMMING_DISTANCE 0.5f
+#define THREASHOLD_EDIT_DISTANCE             0.3f
+#define THREASHOLD_HAMMING_DISTANCE          0.5f
 
 typedef enum _MatchType
 {
@@ -48,18 +48,18 @@ template<class TKeyWord, class TID>
 class InvertedIndex
 {
 public:
-	bool addDoc(SInvDoc<TKeyWord, TID> &Doc);
-	bool delDoc(TID nID);
-	bool updateDoc(SInvDoc<TKeyWord, TID> &Doc);
+	bool addDoc(IN SInvDoc<TKeyWord, TID> &Doc);
+	bool delDoc(IN TID nID);
+	bool updateDoc(IN SInvDoc<TKeyWord, TID> &Doc);
 	bool getMatchID(IN SInvDoc<TKeyWord, TID> &Doc, IN int nTopN, IN MatchType method, OUT TID &nID);
 
 private:
-	std::vector<TID> getTopN(SInvDoc<TKeyWord, TID> &Doc, int nTopN);
+	std::vector<TID> getTopN(IN SInvDoc<TKeyWord, TID> &Doc, IN int nTopN);
 	float match(IN TID nID, IN SInvDoc<TKeyWord, TID> &Doc, IN MatchType method);
 	float matchByEditDistance(IN TID nID, IN SInvDoc<TKeyWord, TID> &Doc);
 	float matchByHammingDistance(IN TID nID, IN SInvDoc<TKeyWord, TID> &Doc);
 
-	float getThrehold(MatchType method);
+	float getThrehold(IN MatchType method);
 private:
 	std::unordered_map<TID, SInvDoc<TKeyWord, TID> >           m_mapDoc;
 	std::unordered_map<TKeyWord, std::list<TID> >              m_mapWordDoc;
