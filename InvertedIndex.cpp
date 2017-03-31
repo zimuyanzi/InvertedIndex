@@ -1,8 +1,7 @@
-#include "InvertedIndex.h"
-
-
 #ifndef __INVERTED_CPP__
 #define __INVERTED_CPP__
+
+#include "InvertedIndex.h"
 
 template<class TKeyWord, class TID>
 SInvDoc<TKeyWord, TID>::SInvDoc(TID ID, int32_t nSize, std::vector<TKeyWord> &vecWord)
